@@ -12,7 +12,8 @@ buildscript {
         classpath "com.github.dcendents:android-maven-gradle-plugin:$mavenGradleVersion"
     }
 }
-
+apply plugin: 'com.github.dcendents.android-maven'  
+group='com.github.MomentSocial'
 apply plugin: 'com.jfrog.bintray'
 
 android {

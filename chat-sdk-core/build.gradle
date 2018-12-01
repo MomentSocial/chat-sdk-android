@@ -14,7 +14,8 @@ buildscript {
     }
 }
 
-
+apply plugin: 'com.github.dcendents.android-maven'  
+group='com.github.MomentSocial'
 apply plugin: 'org.greenrobot.greendao'
 
 android {
