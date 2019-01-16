@@ -195,7 +195,7 @@ public class Message implements CoreEntity {
             return (String) value;
         }
         else {
-            return "";
+            return value.toString();
         }
     }
 
@@ -260,25 +260,16 @@ public class Message implements CoreEntity {
 
     public MessageType getMessageType() {
         if(this.type != null) {
-            return MessageType.values()[this.type];
+            return new MessageType(this.type);
         }
-        return MessageType.None;
-    }
-
-    public boolean messageTypeIs (MessageType... types) {
-        for (MessageType type : types) {
-            if (getMessageType().equals(type)) {
-                return true;
-            }
-        }
-        return false;
+        return new MessageType(MessageType.None);
     }
 
     public void setType(Integer type) {
         this.type = type;
     }
     public void setMessageType(MessageType type) {
-        this.type = type.ordinal();
+        this.type = type.value();
     }
 
     public Integer getStatus() {
